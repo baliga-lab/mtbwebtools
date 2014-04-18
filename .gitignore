@@ -1,0 +1,9 @@
+search.db/
+.pyc
+requirements_noversion.txt
+mtbflask.py
+db_repository
+config.py
+app.db
+logs/
+tmp/
