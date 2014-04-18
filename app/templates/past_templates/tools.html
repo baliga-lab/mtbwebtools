@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+	<title>Tools</title>
+    <h1>Tools</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p>
+         <input type="submit" name="submit" value="Load"><br>
+         {% if otherbuttons %}
+         <input type="submit" name="submit" value="Heatmap"><br>
+         <input type="submit" name="submit" value="Export"><br>
+
+         {% endif %}
+    </form>
+{% endblock %}

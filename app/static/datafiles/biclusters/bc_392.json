@@ -1,0 +1,5 @@
+{
+"genes": [ "RV0167", "RV0169", "RV0170", "RV0171", "RV0172", "RV0174", "RV3145", "RV3158", "RV0168", "RV1676", "RV1677", "RV3146", "RV3148", "RV3154", "RV3157" ],
+
+"conditions": [ "4107:::X10ug.mL.TriclosanvsDMSO..6h", "4062:::MTB.strain.1254.Ctrl.vs.0.005.mM.DETA.NO.40min.rep.3", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.DETA.NO.24hrs...0.5.mM.DNO.40min.rep.4", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.DETA.NO.8hrs.rep.3", "4089:::MTB1254.control.vs..1.0.ug.ml.Erythromycin.for.24.hr..ref..rep.2", "4107:::X10ug.mL.RoxvsEtOH..6h", "4615:::aceatate.induction.3", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.DETA.NO.24hrs...0.5.mM.DNO.40min.rep.2", "4089:::MTB1254.control.vs..1.0.ug.ml.Erythromycin.for.24.hr..ref..rep.4", "Raghavan_Nature2008:::ESPR..mutant..R...rep3", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.KCN.1hr.rep.1", "4062:::MTB.strain.1254.Ctrl.vs.0.005.mM.DETA.NO.40min.rep.1", "4062:::MTB.strain.1254.Ctrl.vs.0.005.mM.DETA.NO.40min.rep.2", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.DETA.NO.8hrs.rep.4", "4615:::PA_100uM_24h_01", "4089:::MTB1254.control.vs..1.0.ug.ml.Streptomycin.for.24.hr..ref..rep.4" ]
+}

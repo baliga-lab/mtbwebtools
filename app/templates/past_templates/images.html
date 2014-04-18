@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <head>
+    <title>Boxplot</title>
+      <script>
+var imagePath = "{{ url_for('static', filename='datafiles/') }}"+"{{ image }}";
+var img = new Image();
+img.src = imagePath;
+img.height = 500;
+document.body.appendChild(img);
+    </script>
+  </head>
+  <body>
+</body>
+{% endblock %}

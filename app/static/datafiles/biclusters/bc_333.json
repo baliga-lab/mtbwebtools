@@ -1,0 +1,5 @@
+{
+"genes": [ "RV0700", "RV0702", "RV0704", "RV0705", "RV0703", "RV0707", "RV0708", "RV0709", "RV0710", "RV0714", "RV0715", "RV0716", "RV0718", "RV0722", "RV3456C" ],
+
+"conditions": [ "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.DETA.NO.24hrs.rep.3", "4062:::MTB.strain.1254.Ctrl.vs.0.5.mM.KCN...2hr.hypoxia.rep.3", "Raghavan_Nature2008:::ESPR..mutant..R...rep3", "Rohde_CellHostMicrobe2007:::CDC1551.ctrl.vs.pH.6.5.7H9.broth.for.2.hr", "4107:::X0.1mMGSNO.10ug.mLmdvsDMSO.6h", "4696:::H37Rv.wt.vs.dosT.null.anaerobic.Gaspak24hr.rep.3", "4062:::MTB.strain.1254.Ctrl.vs.low.aeration...0.05.mM.DETA.NO.rep.3", "4735:::H37Rv.dosR.KO.vs.BCG.with.pMFdosR.at.OD.0.4.rep.2", "Rohde_CellHostMicrobe2007:::CDC1551.ctrl.vs.pH.5.5.7H9.broth.for.2.hr" ]
+}

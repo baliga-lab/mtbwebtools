@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MTB Webtools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    
+  </head>
+  <body>
+
+
+  <header>
+    <div class="container">
+      <h1 class="logo">MTB Webtools</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('.index') }}">Home</a></li>
+          <li><a href="{{ url_for('.profile') }}">Experiments</a><li>
+            <li><form style="display: inline;" action="{{url_for('.search')}}" method="POST">
+              <input type="text" name="searchtext">
+              <input type="submit" name="search" value="Search">e.g. pH stress or rv0001</form>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+ 
+  </body>
+</html>

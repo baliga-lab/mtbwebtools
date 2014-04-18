@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>One Graph</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+</head>
+ <script type="text/javascript">
+
+d3.csv("static/cMonkey_Mtu_ratios_test.csv", function(d) {
+  window["data"] = d
+  return d;
+}, function(error, rows) {
+  console.log(rows);
+}); 
+var w = 960, h = 600;
+var vis = d3.select("body").append("svg:svg").attr("width", w).attr("height", h);
+</script>
+</html>

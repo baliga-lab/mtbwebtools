@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Search results for "{{query}}":</h1>
+<h4>Genes:</h4>
+{% for gene in generesults %}
+<a href="{{url_for('.zoomplot', genedescr=gene)}}">{{gene}}</a><br>
+{% endfor %}
+<h4>Conditions:</h4>
+{% for cond in condresults %}
+    {{cond}}<br>
+{% endfor %}
+<h4>Experiments:</h4>
+{% for exp in expresults %}
+    {{exp}}<br>
+{% endfor %}
+{% endblock %}

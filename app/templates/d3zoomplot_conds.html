@@ -1,0 +1,434 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+<html>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+    <script src='http://d3js.org/d3.v3.min.js'></script>
+
+
+
+
+
+    <style type="text/css">
+
+svg {
+
+  font-size: 10px;
+
+}
+
+
+
+.axis {
+
+  shape-rendering: crispEdges;
+
+}
+
+
+
+.axis path, .axis line {
+
+  fill: none;
+
+  stroke-width: .5px;
+
+}
+
+
+
+.x.axis path {
+
+  stroke: #000;
+
+}
+
+
+
+.x.axis line {
+
+  stroke: #fff;
+
+  stroke-opacity: .5;
+
+}
+
+
+
+.y.axis line {
+
+  stroke: #ddd;
+
+}
+
+
+
+path.line {
+
+  fill: none;
+
+  stroke: #000;
+
+  stroke-width: .5px;
+
+}
+
+
+
+rect.pane {
+
+  cursor: move;
+
+  fill: none;
+
+  pointer-events: all;
+
+}   
+
+</style>
+
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+
+
+
+var m = [79, 80, 160, 79],
+
+    w = 1280 - m[1] - m[3],
+
+    h = 800 - m[0] - m[2];
+
+
+
+// Scales. Note the inverted domain for the y-scale: bigger is up!
+
+var x = d3.scale.linear().range([0, w]),
+
+    y = d3.scale.linear().range([h, 0]),
+
+    xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(-h, 0).tickPadding(6),
+
+    yAxis = d3.svg.axis().scale(y).orient("right").tickSize(-w).tickPadding(6);
+
+
+
+
+
+// An area generator.
+
+var area = d3.svg.area()
+
+    .interpolate("step-after")
+
+    .x(function(d) { return x(d.date); })
+
+    .y0(y(0))
+
+    .y1(function(d) { return y(d.value); });
+
+
+
+// A line generator.
+
+var line = d3.svg.line()
+
+    .interpolate("step-after")
+
+    .x(function(d) { return x(d.date); })
+
+    .y(function(d) { return y(d.value); });
+
+
+
+var svg = d3.select("body").append("svg:svg")
+
+    .attr("width", w + m[1] + m[3])
+
+    .attr("height", h + m[0] + m[2])
+
+  .append("svg:g")
+
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+
+
+var zoom = d3.behavior.zoom()
+
+    .on("zoom", draw);
+
+
+
+    svg.append("svg:g")
+
+    .attr("class", "y axis")
+
+    .attr("transform", "translate(" + w + ",0)");
+
+
+
+svg.append("svg:path")
+
+    .attr("class", "area")
+
+    .attr("clip-path", "url(#clip)")
+
+    .style("fill", "url(#gradient)");
+
+
+
+svg.append("svg:g")
+
+    .attr("class", "x axis")
+
+    .attr("transform", "translate(0," + h + ")");
+
+
+
+// Zoom stuff:
+
+
+
+var gradient = svg.append("defs").append("linearGradient")
+
+    .attr("id", "gradient")
+
+    .attr("x2", "0%")
+
+    .attr("y2", "100%");
+
+
+
+gradient.append("stop")
+
+    .attr("offset", "0%")
+
+    .attr("stop-color", "#fff")
+
+    .attr("stop-opacity", .5);
+
+
+
+gradient.append("stop")
+
+    .attr("offset", "100%")
+
+    .attr("stop-color", "#999")
+
+    .attr("stop-opacity", 1);
+
+
+
+svg.append("clipPath")
+
+    .attr("id", "clip")
+
+  .append("rect")
+
+    .attr("x", x(0))
+
+    .attr("y", y(1))
+
+    .attr("width", x(1) - x(0))
+
+    .attr("height", y(0) - y(1));
+
+
+
+svg.append("rect")
+
+  .attr("class", "pane")
+
+  .attr("width", w)
+
+  .attr("height", h)
+
+  .call(zoom);
+
+  svg.append("text")
+        .attr("x", (w / 2))             
+        .attr("y", 0 + (m.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "18px") 
+        //.style("text-decoration", "underline")  
+        .text("{{genename}}");
+
+window['data_'] = "";
+
+var data = [];
+
+d3.json(("{{ url_for('static', filename='') }}"+"datafiles/{{jsonobj}}"), function (error, jsondata) {
+  if (error) return console.warn(error);
+
+  dataset = jsondata;
+  var entrs = d3.entries(dataset);
+  var cnt = 1;
+  entrs.forEach(function(d) {
+
+    d.i = +cnt;
+    d.cond = d.key;
+    d.value = +d.value;
+    data.push(d)
+
+    cnt+=1;
+  });
+
+/*
+d3.csv("static/cMonkey_Mtu_ratios_test_labels.csv", function(data) {
+
+  
+
+  //data = data.sort(function(a,b){return a.value-b.value})
+
+  // Parse dates and numbers.
+  var cnt = 1;
+  data.forEach(function(d, i) {
+
+    //debugger
+
+    d.i = +cnt;
+    d.cond = d.Condition;
+    d.value = +d.Ratio;
+    cnt+=1;
+    //d.x = d.x
+
+    //eval("data_").push(d)
+
+  });
+
+*/
+
+
+
+
+
+  // Compute the maximum price.
+
+  //x.domain([0, 2300]);
+
+  y.domain([-10, 10]);
+
+  x.domain([0, d3.max(data, function(d) { return d.i; })]);
+
+  //y.domain([d3.min(data, function(d) { return d.value; }), d3.max(data, function(d) { return d.value; })]);
+
+  zoom.x(x);
+
+  //
+
+ //data_ = data.sort(function (a, b) {
+ //  if (a.value > b.value)
+ //    return 1;
+ //  if (a.value < b.value)
+ //    return -1;
+    // a must be equal to b
+//   return 0;
+//});
+//data_ = data;
+//data = data.filter(function(d){
+//          if(!isNaN(d.value))
+//            {if(d.i >= x.domain()[0] && d.i <= x.domain()[1])
+//              {return d;}
+//            }
+//          });
+
+  //data_ = data.sort(function(a, b){ return d3.ascending(+a.value, +b.value); })
+
+
+  //data_ = data_.filter.sort(function(a, b){ return d3.ascending(a.value, b.value); })
+
+  data_ = s(data);
+
+  svg.select("path.area").data([data]);
+
+  svg.select("path.line").data([data]);
+
+  draw();
+
+});
+
+function s(arr){
+
+    arr.sort(function(a, b){
+
+        var keyA = a.value,
+
+        keyB = b.value;
+
+        //if (isNaN(keyA) || isNaN(keyB)) { return 0;}
+
+        // Compare the 2 data points
+
+        if(keyA < keyB) return -1;
+
+        if(keyA > keyB) return 1;
+
+        return 0;
+
+    });
+    //console.log(arr);
+    return arr;
+
+}
+
+
+function draw() {
+
+  svg.select("g.x.axis").call(xAxis);
+
+  svg.select("g.y.axis").call(yAxis);
+
+  svg.select("path.area").attr("d", area);
+
+  svg.select("path.line").attr("d", line);
+
+
+        var circle = svg.selectAll("circle")
+
+        .data(data_.filter(function(d){
+          if(!isNaN(d.value))
+            {if(d.i >= x.domain()[0] && d.i <= x.domain()[1])
+              {return d;}
+            }
+          }) ,(function(d){return d.i;}));
+
+
+        // Exit
+        circle.exit().remove();
+
+  
+        // Insert
+        circle.enter().append("circle")
+        .append('svg:title')
+        .text(function(d){return d.cond});
+
+
+        // Update
+        circle
+
+        .attr("r", 2.5)
+
+        .attr("cx", function(d) { return x(d.i); })
+
+        .attr("cy", function(d) { return y(d.value); })
+
+        .style("fill", function(d){
+          if(+d.value > 0){return "blue"}else{return "red"}
+        });
+
+
+
+  }
+
+
+</script>
+
+</html>
+{% endblock %}

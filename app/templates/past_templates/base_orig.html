@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MTB Webtools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    
+  </head>
+  <body>
+
+
+  <header>
+    <div class="container">
+      <h1 class="logo">MTB Webtools</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          {% if 'email' in session %}
+          <!--<li><a href="{{ url_for('profile') }}">Profile</a></li>-->
+          <li><a href="{{ url_for('upload_file')}}">Upload data</a><li>
+          <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
+            <li><form style="display: inline;" action="{{url_for('search')}}" method="POST">
+              <input type="text" name="searchtext">
+              <input type="submit" name="search" value="Search"></form>
+            </li>
+          {% else %}
+          <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('login') }}">Sign In</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+ 
+  </body>
+</html>

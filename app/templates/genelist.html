@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method=post enctype=multipart/form-data>
+Enter a list of genes, one per line, for Heatmap with Hierarchical Clustering:<br><br>
+<textarea name="text" id="textarea" cols="40" rows="20">rv0001
+rv0002
+rv0003
+rv0004
+rv0005
+rv0006
+rv0007
+rv0008c
+rv0009
+rv0010c</textarea><br>
+<br><br>
+<input type="submit" name="submit" id="button" value="Draw Heatmap"/><br><br>
+Please select condition type(s):<br><br>
+{% if annots %}
+  {% for annot in annots %}
+  <input type="checkbox" name="{{annot}}" value="{{annot}}">{{annot}}<br>
+  {% endfor %}
+  {% endif %}
+<br><br>
+<br><br>
+</form>
+
+{% endblock %}

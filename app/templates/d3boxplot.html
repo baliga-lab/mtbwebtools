@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: steelblue;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #000;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+ 
+.x.axis path { 
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="static/d3/box2.js"></script>
+<script>
+
+var margin = {top: 10, right: 50, bottom: 20, left: 50},
+    width = 120 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var min = Infinity,
+    max = -Infinity;
+
+var chart = d3.box()
+    .whiskers(iqr(1.5))
+    .width(width)
+    .height(height);
+
+var data;
+var genes = {};
+var somedata = {};
+/*
+d3.csv("static/datafiles/cMonkey_Mtu_boxplotdata.csv", function (error, csv) {
+  if (error) return console.log("there was an error loading the csv: " + error);
+  console.log("there are " + csv.length + " elements in my csv set");
+
+  var nestFunction = d3.nest()
+    .key(function(d){return d.Gene;})
+    .key(function(d) { return d.Condition; });
+      //.key(function(d) { return d.Ratio; });
+      //create the function that will nest data by Gene name and Condition
+
+      data = nestFunction.entries(
+
+        csv.map(function(d){ 
+          d.Gene = d.Gene;
+
+          d.Condition = d.Condition;
+          d.Ratio = +d.Ratio;  
+
+          var gc = d.Gene+d.Condition;
+          if (!somedata[gc]) {
+            var a = [];
+            a.push(+d.Ratio);
+            somedata[gc] = a;
+          } else {
+            var a = somedata[gc];
+            a.push(+d.Ratio);
+            somedata[gc] = a;
+          }
+
+          if (+d.Ratio > max) max = +d.Ratio; // set min for data point scale
+          if (+d.Ratio < min) min = +d.Ratio; // set max for data point scale
+
+          return d;
+         })
+
+       );  //pass the formatted data array into the nest function
+
+*/
+
+var dataset;
+var data = {};
+
+document.writeln('preparing to load json.')
+
+d3.json("static/datafiles/jsondata.txt", function (error, jsondata) {
+  if (error) return console.warn(error);
+  dataset = jsondata;
+  var entrs = d3.entries(dataset);
+
+  document.writeln('json loaded. entries parsed.')
+
+  entrs.forEach(function(d) {
+    d.Gene = d.key;
+    var vals = d3.entries(d.value); // convert condition -> ratios assoc. array to plain array of objects
+    for (var i = 0; i < vals.length; i++) {
+      var condition = vals[i].key;
+      var ratios = vals[i].value;
+      var a = [];
+      for (var j = 0; j < ratios.length; j++) {
+        a.push(+ratios[j]);
+      }
+      var name = d.Gene + condition;
+      data[name] = a;
+    }
+  });
+
+  //  Do some processing on the data to get into the right format for "box"
+/*
+for (gene in genes) {
+  if (genes.hasOwnProperty(gene)) {
+   document.write(gene);
+  }
+}
+*/
+  //var labels = keys(somedata);
+
+ data = d3.entries(data);
+  chart.domain([min, max]);
+
+  var svg = d3.select("body").selectAll("svg")
+      .data(data)
+    .enter().append("svg")
+      .attr("class", "box")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.bottom + margin.top)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(chart);
+/*
+  // the y-axis
+  var y = d3.scale.linear()
+    .domain([min, max])
+    .range([height + margin.top, 0 + margin.top]);
+  
+  var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+   // draw y axis
+  svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+    .append("text") // and text1
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .style("font-size", "16px") 
+      .text("Log Ratio");  
+*/
+});
+/*
+function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  return d.map(d.randomizer);
+}
+
+function randomizer(d) {
+  var k = d3.max(d) * .02;
+  return function(d) {
+    return Math.max(min, Math.min(max, d + k * (Math.random() - .5)));
+  };
+}
+*/
+// Returns a function to compute the interquartile range.
+function iqr(k) {
+  return function(d, i) {
+    var q1 = d.quartiles[0],
+        q3 = d.quartiles[2],
+        iqr = (q3 - q1) * k,
+        i = -1,
+        j = d.length;
+    while (d[++i] < q1 - iqr);
+    while (d[--j] > q3 + iqr);
+    return [i, j];
+  };
+}
+
+</script>

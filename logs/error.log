@@ -1,0 +1,1363 @@
+[Wed Apr 09 15:53:06 2014] [info] mod_wsgi (pid=23519): Attach interpreter ''.
+[Wed Apr 09 15:53:31 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23527, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23527): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23527): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 3, in <module>
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]     import matplotlib
+[Wed Apr 09 15:53:35 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 15:53:36 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 15:53:36 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23521, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23521): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23521): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 3, in <module>
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     import matplotlib
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 15:53:37 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 15:56:37 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 17, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return self.registry()
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     self, resource_name
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     raise err
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] cache:
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: '/root/.python-eggs'
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   /root/.python-eggs
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 15:56:45 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23527, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23527): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23527): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 7, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     import matplotlib.pyplot as plt
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/pyplot.py", line 22, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     from matplotlib import docstring
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/docstring.py", line 1, in <module>
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244]     from matplotlib import cbook
+[Wed Apr 09 15:56:45 2014] [error] [client 10.10.7.244] ImportError: cannot import name cbook
+[Wed Apr 09 16:00:08 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:00:08 2014] [error] [client 10.10.7.244] ImportError: cannot import name views
+[Wed Apr 09 16:00:08 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23613, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23613): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23613): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 17, in <module>
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return self.registry()
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     self, resource_name
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]     raise err
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] cache:
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: '/root/.python-eggs'
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244]   /root/.python-eggs
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Wed Apr 09 16:00:10 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:01:05 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23528, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23528): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23528): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 8, in <module>
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     import matplotlib.pyplot as plt
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 16:01:06 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 16:01:06 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23525, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23525): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23525): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 8, in <module>
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     import matplotlib.pyplot as plt
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 16:01:07 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 16:04:38 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:04:38 2014] [error] [client 10.10.7.244] ImportError: cannot import name views
+[Wed Apr 09 16:04:38 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23523, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23523): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23523): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 169
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]     return 0
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244]    ^
+[Wed Apr 09 16:04:39 2014] [error] [client 10.10.7.244] IndentationError: unexpected indent
+[Wed Apr 09 16:07:59 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23522, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23522): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23522): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 8, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     import Heatmap
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/Heatmap.py", line 8, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     import pylab as pl
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pylab.py", line 1, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     from matplotlib.pylab import *
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 16:08:00 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:08:00 2014] [error] [client 10.10.7.244] ImportError: cannot import name views
+[Wed Apr 09 16:11:14 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23521, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23521): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23521): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 12, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     import matplotlib.pyplot as plt
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 16:11:14 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23528, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23528): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23528): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 12, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     import matplotlib.pyplot as plt
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 765, in <module>
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     rcParams = rc_params()
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 683, in rc_params
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     fname = matplotlib_fname()
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 595, in matplotlib_fname
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     fname = os.path.join(get_configdir(), 'matplotlibrc')
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 246, in wrapper
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     ret = func(*args, **kwargs)
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/matplotlib/__init__.py", line 471, in _get_configdir
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244]     raise RuntimeError("Failed to create %s/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data"%h)
+[Wed Apr 09 16:11:14 2014] [error] [client 10.10.7.244] RuntimeError: Failed to create /root/.matplotlib; consider setting MPLCONFIGDIR to a writable directory for matplotlib configuration data
+[Wed Apr 09 16:13:24 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23524): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] ImportError: cannot import name views
+[Wed Apr 09 16:13:24 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23613, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23613): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23613): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 13, in <module>
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244]     from app import views, models
+[Wed Apr 09 16:13:24 2014] [error] [client 10.10.7.244] ImportError: cannot import name views
+[Wed Apr 09 16:25:07 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23526, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23526): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23526): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 17, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.registry()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self, resource_name
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     raise err
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] cache:
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: '/root/.python-eggs'
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   /root/.python-eggs
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23525, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23525): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] mod_wsgi (pid=23525): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 17, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.registry()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self, resource_name
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]     raise err
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] cache:
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: '/root/.python-eggs'
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244]   /root/.python-eggs
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Wed Apr 09 16:25:08 2014] [error] [client 10.10.7.244] 
+[Wed Apr 09 16:29:39 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23523, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:29:41 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23525, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:31:08 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23526, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:54:35 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23613, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 09 16:54:46 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23524, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 11:41:59 2014] [info] [client 10.10.7.244] mod_wsgi (pid=23525, process='', application='mtbwebtools.systemsbiology.net|'): Reloading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 11:54:24 2014] [info] mod_wsgi (pid=23519): Shutdown requested 'mtbwebtools'.
+[Thu Apr 10 11:54:24 2014] [info] mod_wsgi (pid=23519): Stopping process 'mtbwebtools'.
+[Thu Apr 10 11:54:24 2014] [info] mod_wsgi (pid=23519): Destroying interpreters.
+[Thu Apr 10 11:54:24 2014] [info] mod_wsgi (pid=23519): Cleanup interpreter ''.
+[Thu Apr 10 11:54:25 2014] [info] mod_wsgi (pid=23519): Terminating Python.
+[Thu Apr 10 11:54:25 2014] [info] mod_wsgi (pid=23519): Python has shutdown.
+[Thu Apr 10 11:54:28 2014] [info] mod_wsgi (pid=12727): Attach interpreter ''.
+[Thu Apr 10 11:54:28 2014] [info] mod_wsgi (pid=12727): Adding '/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 11:55:08 2014] [info] [client 10.10.7.244] mod_wsgi (pid=12736, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 11:57:03 2014] [info] [client 10.10.7.244] mod_wsgi (pid=12865, process='', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Shutdown requested 'mtbwebtools'.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Stopping process 'mtbwebtools'.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Destroying interpreters.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Cleanup interpreter ''.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Terminating Python.
+[Thu Apr 10 15:37:06 2014] [info] mod_wsgi (pid=12727): Python has shutdown.
+[Thu Apr 10 15:37:09 2014] [info] mod_wsgi (pid=17817): Attach interpreter ''.
+[Thu Apr 10 15:37:09 2014] [info] mod_wsgi (pid=17817): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:37:09 2014] [info] mod_wsgi (pid=17816): Attach interpreter ''.
+[Thu Apr 10 15:37:09 2014] [info] mod_wsgi (pid=17816): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:37:23 2014] [info] mod_wsgi (pid=17817): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Thu Apr 10 15:37:23 2014] [info] mod_wsgi (pid=17817): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:37:23 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17817, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:37:24 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Thu Apr 10 15:37:24 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17817): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17817): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244]   tmp/
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:37:25 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:06 2014] [info] mod_wsgi (pid=17816): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Thu Apr 10 15:39:06 2014] [info] mod_wsgi (pid=17816): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:39:06 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17816, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:39:07 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Thu Apr 10 15:39:07 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244]   tmp/
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:39:07 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:39:51 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17817, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:39:51 2014] [error] /tools/lib/python2.7/site-packages/pkg_resources.py:1031: UserWarning: /tmp/ is writable by group/others and vulnerable to attack when used with get_resource_filename. Consider a more secure location (set with .set_extraction_path or the PYTHON_EGG_CACHE environment variable).
+[Thu Apr 10 15:39:51 2014] [error]   warnings.warn(msg, UserWarning)
+[Thu Apr 10 15:41:23 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17816, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244]   tmp/
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:41:23 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17816, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244]   tmp/
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:42:01 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17816, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] mod_wsgi (pid=17816): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244]   tmp
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:42:50 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:45:12 2014] [info] [client 10.10.7.244] mod_wsgi (pid=17816, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:45:12 2014] [error] /tools/lib/python2.7/site-packages/pkg_resources.py:1031: UserWarning: /local/htdocs/mtbwebtools/tmp is writable by group/others and vulnerable to attack when used with get_resource_filename. Consider a more secure location (set with .set_extraction_path or the PYTHON_EGG_CACHE environment variable).
+[Thu Apr 10 15:45:12 2014] [error]   warnings.warn(msg, UserWarning)
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Shutdown requested 'mtbwebtools'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Stopping process 'mtbwebtools'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Destroying interpreters.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Destroy interpreter 'mtbwebtools.systemsbiology.net|'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Shutdown requested 'mtbwebtools'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Stopping process 'mtbwebtools'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Destroying interpreters.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Destroy interpreter 'mtbwebtools.systemsbiology.net|'.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Cleanup interpreter ''.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Cleanup interpreter ''.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Terminating Python.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Terminating Python.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17816): Python has shutdown.
+[Thu Apr 10 15:55:24 2014] [info] mod_wsgi (pid=17817): Python has shutdown.
+[Thu Apr 10 15:55:27 2014] [info] mod_wsgi (pid=18617): Attach interpreter ''.
+[Thu Apr 10 15:55:27 2014] [info] mod_wsgi (pid=18617): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:55:27 2014] [info] mod_wsgi (pid=18616): Attach interpreter ''.
+[Thu Apr 10 15:55:27 2014] [info] mod_wsgi (pid=18616): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:55:31 2014] [info] mod_wsgi (pid=18617): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Thu Apr 10 15:55:31 2014] [info] mod_wsgi (pid=18617): Adding '/local/htdocs/mtbwebtools/' to path.
+[Thu Apr 10 15:55:31 2014] [info] [client 10.10.7.244] mod_wsgi (pid=18617, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:55:31 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Thu Apr 10 15:55:31 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] mod_wsgi (pid=18617): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] mod_wsgi (pid=18617): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     from app import app as application
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 18, in <module>
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return self.registry()
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     self, resource_name
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]     raise err
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] cache:
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: '/local/htdocs/mtbwebtools/tmp/MySQL_python-1.2.3-py2.7-linux-x86_64.egg-tmp'
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244]   /local/htdocs/mtbwebtools/tmp
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Thu Apr 10 15:55:32 2014] [error] [client 10.10.7.244] 
+[Thu Apr 10 15:57:35 2014] [info] [client 10.10.7.244] mod_wsgi (pid=18617, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Sun Apr 13 03:37:03 2014] [info] mod_wsgi (pid=22627): Attach interpreter ''.
+[Sun Apr 13 03:37:03 2014] [info] mod_wsgi (pid=22627): Adding '/local/htdocs/mtbwebtools/' to path.
+[Sun Apr 13 03:37:03 2014] [info] mod_wsgi (pid=22626): Attach interpreter ''.
+[Sun Apr 13 03:37:03 2014] [info] mod_wsgi (pid=22626): Adding '/local/htdocs/mtbwebtools/' to path.
+[Wed Apr 16 10:36:36 2014] [info] mod_wsgi (pid=22626): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 10:36:36 2014] [info] mod_wsgi (pid=22626): Adding '/local/htdocs/mtbwebtools/' to path.
+[Wed Apr 16 10:36:36 2014] [info] [client 10.10.2.29] mod_wsgi (pid=22626, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 10:36:42 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 10:36:42 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Stopping process 'mtbwebtools'.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Destroying interpreters.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Cleanup interpreter ''.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Stopping process 'mtbwebtools'.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Destroying interpreters.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Destroy interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Cleanup interpreter ''.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Terminating Python.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22627): Python has shutdown.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Terminating Python.
+[Wed Apr 16 10:42:12 2014] [info] mod_wsgi (pid=22626): Python has shutdown.
+[Wed Apr 16 10:42:15 2014] [info] mod_wsgi (pid=4993): Attach interpreter ''.
+[Wed Apr 16 10:42:15 2014] [info] mod_wsgi (pid=4993): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:42:15 2014] [info] mod_wsgi (pid=4994): Attach interpreter ''.
+[Wed Apr 16 10:42:15 2014] [info] mod_wsgi (pid=4994): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:42:19 2014] [info] mod_wsgi (pid=4993): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 10:42:19 2014] [info] mod_wsgi (pid=4993): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:42:19 2014] [info] [client 10.10.2.29] mod_wsgi (pid=4993, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 10:42:19 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 10:42:19 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Stopping process 'mtbwebtools'.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Destroying interpreters.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Cleanup interpreter ''.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Stopping process 'mtbwebtools'.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Destroying interpreters.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Destroy interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Terminating Python.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4994): Python has shutdown.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Cleanup interpreter ''.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Terminating Python.
+[Wed Apr 16 10:53:08 2014] [info] mod_wsgi (pid=4993): Python has shutdown.
+[Wed Apr 16 10:53:10 2014] [info] mod_wsgi (pid=5351): Attach interpreter ''.
+[Wed Apr 16 10:53:10 2014] [info] mod_wsgi (pid=5351): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:53:10 2014] [info] mod_wsgi (pid=5352): Attach interpreter ''.
+[Wed Apr 16 10:53:10 2014] [info] mod_wsgi (pid=5352): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:53:20 2014] [info] mod_wsgi (pid=5351): Create interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 10:53:20 2014] [info] mod_wsgi (pid=5351): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 10:53:20 2014] [info] [client 10.10.2.29] mod_wsgi (pid=5351, process='mtbwebtools', application='mtbwebtools.systemsbiology.net|'): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 10:53:20 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 10:53:20 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Destroying interpreters.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Cleanup interpreter ''.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Destroying interpreters.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Destroy interpreter 'mtbwebtools.systemsbiology.net|'.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Cleanup interpreter ''.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Terminating Python.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5352): Python has shutdown.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Terminating Python.
+[Wed Apr 16 11:04:54 2014] [info] mod_wsgi (pid=5351): Python has shutdown.
+[Wed Apr 16 11:04:57 2014] [info] mod_wsgi (pid=5739): Attach interpreter ''.
+[Wed Apr 16 11:04:57 2014] [info] mod_wsgi (pid=5739): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:04:57 2014] [info] mod_wsgi (pid=5740): Attach interpreter ''.
+[Wed Apr 16 11:04:57 2014] [info] mod_wsgi (pid=5740): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Destroying interpreters.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Cleanup interpreter ''.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Destroying interpreters.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Cleanup interpreter ''.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Terminating Python.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5739): Python has shutdown.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Terminating Python.
+[Wed Apr 16 11:05:40 2014] [info] mod_wsgi (pid=5740): Python has shutdown.
+[Wed Apr 16 11:05:42 2014] [info] mod_wsgi (pid=5893): Attach interpreter ''.
+[Wed Apr 16 11:05:42 2014] [info] mod_wsgi (pid=5893): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:05:42 2014] [info] mod_wsgi (pid=5894): Attach interpreter ''.
+[Wed Apr 16 11:05:42 2014] [info] mod_wsgi (pid=5894): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:06:20 2014] [error] [client 10.10.2.29] Target WSGI script not found or unable to stat: /local/htdocs/mtbwebtools/wsgi.py
+[Wed Apr 16 11:06:31 2014] [error] [client 10.10.2.29] Target WSGI script not found or unable to stat: /local/htdocs/mtbwebtools/wsgi.py
+[Wed Apr 16 11:06:32 2014] [error] [client 10.10.2.29] Target WSGI script not found or unable to stat: /local/htdocs/mtbwebtools/wsgi.py
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Destroying interpreters.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Cleanup interpreter ''.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Destroying interpreters.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Cleanup interpreter ''.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Terminating Python.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Terminating Python.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5894): Python has shutdown.
+[Wed Apr 16 11:07:22 2014] [info] mod_wsgi (pid=5893): Python has shutdown.
+[Wed Apr 16 11:07:24 2014] [info] mod_wsgi (pid=6143): Attach interpreter ''.
+[Wed Apr 16 11:07:24 2014] [info] mod_wsgi (pid=6143): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:07:24 2014] [info] mod_wsgi (pid=6144): Attach interpreter ''.
+[Wed Apr 16 11:07:24 2014] [info] mod_wsgi (pid=6144): Adding '/local/apache-stuff/mtbwebtools' to path.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Destroying interpreters.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Cleanup interpreter ''.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Stopping process 'mtbwebtools'.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Destroying interpreters.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Cleanup interpreter ''.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Terminating Python.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6143): Python has shutdown.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Terminating Python.
+[Wed Apr 16 11:12:28 2014] [info] mod_wsgi (pid=6144): Python has shutdown.
+[Wed Apr 16 11:12:39 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 11:12:39 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 11:13:13 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 11:13:13 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 11:14:57 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 11:14:57 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 11:18:26 2014] [error] /tools/lib/python2.7/site-packages/Crypto/Util/number.py:57: PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.
+[Wed Apr 16 11:18:26 2014] [error]   _warn("Not using mpz_powm_sec.  You should rebuild using libgmp >= 5 to avoid timing attack vulnerability.", PowmInsecureWarning)
+[Wed Apr 16 16:00:04 2014] [info] mod_wsgi (pid=12562): Attach interpreter ''.
+[Wed Apr 16 16:00:04 2014] [info] mod_wsgi (pid=12562): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:00:04 2014] [info] mod_wsgi (pid=12561): Attach interpreter ''.
+[Wed Apr 16 16:00:04 2014] [info] mod_wsgi (pid=12561): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:00:10 2014] [info] [client 10.10.7.244] mod_wsgi (pid=12562, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] mod_wsgi (pid=12562): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] mod_wsgi (pid=12562): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 21, in <module>
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     whooshalchemy.whoosh_index(app, File)
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 168, in whoosh_index
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     _create_index(app, model))
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_whooshalchemy.py", line 199, in _create_index
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     model.query = _QueryProxy(model.query, primary_key,
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 396, in __get__
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return type.query_class(mapper, session=self.sa.session())
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 70, in __call__
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return self.registry()
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/util/_collections.py", line 852, in __call__
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return self.registry.setdefault(key, self.createfunc())
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 201, in __init__
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     bind=db.engine,
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 746, in engine
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return self.get_engine(self.get_app())
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 763, in get_engine
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return connector.get_engine()
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask_sqlalchemy.py", line 443, in get_engine
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     self._engine = rv = sqlalchemy.create_engine(info, **options)
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py", line 332, in create_engine
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return strategy.create(*args, **kwargs)
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 64, in create
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     dbapi = dialect_cls.dbapi(**dbapi_args)
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 57, in dbapi
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     return __import__('MySQLdb')
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/MySQLdb/__init__.py", line 19, in <module>
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 7, in <module>
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "build/bdist.linux-x86_64/egg/_mysql.py", line 4, in __bootstrap__
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 936, in resource_filename
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     self, resource_name
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1567, in get_resource_filename
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     self._extract_resource(manager, self._eager_to_zip(name))
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1595, in _extract_resource
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     self.egg_name, self._parts(zip_path)
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 1002, in get_cache_path
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     self.extraction_error()
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/pkg_resources.py", line 982, in extraction_error
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]     raise err
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] ExtractionError: Can't extract file(s) to egg cache
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] The following error occurred while trying to extract file(s) to the Python egg
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] cache:
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   [Errno 13] Permission denied: 'tmp'
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] The Python egg cache directory is currently set to:
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244]   tmp/
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] Perhaps your account does not have write access to this directory?  You can
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] change the cache directory by setting the PYTHON_EGG_CACHE environment
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] variable to point to an accessible directory.
+[Wed Apr 16 16:00:11 2014] [error] [client 10.10.7.244] 
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12562): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12562): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12562): Destroying interpreters.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12562): Cleanup interpreter ''.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12562): Terminating Python.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12561): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12561): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12561): Destroying interpreters.
+[Wed Apr 16 16:03:30 2014] [info] mod_wsgi (pid=12561): Cleanup interpreter ''.
+[Wed Apr 16 16:03:31 2014] [info] mod_wsgi (pid=12561): Terminating Python.
+[Wed Apr 16 16:03:31 2014] [info] mod_wsgi (pid=12561): Python has shutdown.
+[Wed Apr 16 16:03:31 2014] [info] mod_wsgi (pid=12562): Python has shutdown.
+[Wed Apr 16 16:03:32 2014] [info] mod_wsgi (pid=12776): Attach interpreter ''.
+[Wed Apr 16 16:03:32 2014] [info] mod_wsgi (pid=12776): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:03:32 2014] [info] mod_wsgi (pid=12777): Attach interpreter ''.
+[Wed Apr 16 16:03:32 2014] [info] mod_wsgi (pid=12777): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:03:36 2014] [info] [client 10.10.7.244] mod_wsgi (pid=12776, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12776): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12776): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12776): Destroying interpreters.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12776): Cleanup interpreter ''.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12776): Terminating Python.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12777): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12777): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12777): Destroying interpreters.
+[Wed Apr 16 16:09:06 2014] [info] mod_wsgi (pid=12777): Cleanup interpreter ''.
+[Wed Apr 16 16:09:07 2014] [info] mod_wsgi (pid=12777): Terminating Python.
+[Wed Apr 16 16:09:07 2014] [info] mod_wsgi (pid=12777): Python has shutdown.
+[Wed Apr 16 16:09:07 2014] [info] mod_wsgi (pid=12776): Python has shutdown.
+[Wed Apr 16 16:09:09 2014] [info] mod_wsgi (pid=13015): Attach interpreter ''.
+[Wed Apr 16 16:09:09 2014] [info] mod_wsgi (pid=13016): Attach interpreter ''.
+[Wed Apr 16 16:09:09 2014] [info] mod_wsgi (pid=13015): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:09:09 2014] [info] mod_wsgi (pid=13016): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:09:16 2014] [info] [client 10.10.7.244] mod_wsgi (pid=13015, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244] mod_wsgi (pid=13015): Target WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi' cannot be loaded as Python module.
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244] mod_wsgi (pid=13015): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/mtbwebtools.wsgi", line 4, in <module>
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]     from app import app as application
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/__init__.py", line 16, in <module>
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]     from app.views import mod as mainModule
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 4, in <module>
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244]     from app import app, db, mtb
+[Wed Apr 16 16:09:16 2014] [error] [client 10.10.7.244] ImportError: cannot import name mtb
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Destroying interpreters.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Cleanup interpreter ''.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Shutdown requested 'mtbwebtools'.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Stopping process 'mtbwebtools'.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Destroying interpreters.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Cleanup interpreter ''.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Terminating Python.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Terminating Python.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13016): Python has shutdown.
+[Wed Apr 16 16:10:41 2014] [info] mod_wsgi (pid=13015): Python has shutdown.
+[Wed Apr 16 16:10:42 2014] [info] mod_wsgi (pid=13159): Attach interpreter ''.
+[Wed Apr 16 16:10:42 2014] [info] mod_wsgi (pid=13159): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:10:42 2014] [info] mod_wsgi (pid=13158): Attach interpreter ''.
+[Wed Apr 16 16:10:42 2014] [info] mod_wsgi (pid=13158): Adding '/local/htdocs/mtbwebtools' to path.
+[Wed Apr 16 16:10:46 2014] [info] [client 10.10.7.244] mod_wsgi (pid=13159, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:11:54 2014] [info] [client 10.10.7.244] mod_wsgi (pid=13158, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244] mod_wsgi (pid=13158): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 36, in index
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     title = 'Home')
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     context, ctx.app)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     rv = template.render(context)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 894, in render
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     return self.environment.handle_exception(exc_info, True)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/templates/test.html", line 1, in top-level template code
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     {% extends "base.html" %}
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/templates/base.html", line 18, in top-level template code
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     <li><a href="{{ url_for('index') }}">Home</a></li>
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     force_external=external)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244]     raise BuildError(endpoint, values, method)
+[Wed Apr 16 16:11:55 2014] [error] [client 10.10.7.244] BuildError: ('index', {}, None)
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Shutdown requested 'mtbwebtools'.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Stopping process 'mtbwebtools'.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Destroying interpreters.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Cleanup interpreter ''.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Terminating Python.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Shutdown requested 'mtbwebtools'.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Stopping process 'mtbwebtools'.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Destroying interpreters.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Cleanup interpreter ''.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Terminating Python.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13159): Python has shutdown.
+[Thu Apr 17 15:02:15 2014] [info] mod_wsgi (pid=13158): Python has shutdown.
+[Thu Apr 17 15:02:17 2014] [info] mod_wsgi (pid=30293): Attach interpreter ''.
+[Thu Apr 17 15:02:17 2014] [info] mod_wsgi (pid=30293): Adding '/local/htdocs/mtbwebtools' to path.
+[Thu Apr 17 15:02:17 2014] [info] mod_wsgi (pid=30292): Attach interpreter ''.
+[Thu Apr 17 15:02:17 2014] [info] mod_wsgi (pid=30292): Adding '/local/htdocs/mtbwebtools' to path.
+[Thu Apr 17 15:02:24 2014] [info] [client 10.10.7.244] mod_wsgi (pid=30292, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:02:33 2014] [info] [client 10.10.7.244] mod_wsgi (pid=30293, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30292): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 329, in bicluster
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244]     OUT = open(inputfile, 'wb')
+[Thu Apr 17 15:03:02 2014] [error] [client 10.10.7.244] IOError: [Errno 13] Permission denied: u'/local/htdocs/mtbwebtools/app/static/datafiles/bicluster_bc_74.csv'
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30293): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 118, in zoomplot
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     jsonfile = makeJSONdataZoomplot(genedescr)
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 171, in makeJSONdataZoomplot
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244]     with open(fulloutput, 'w') as f:
+[Thu Apr 17 15:03:21 2014] [error] [client 10.10.7.244] IOError: [Errno 13] Permission denied: u'/local/htdocs/mtbwebtools/app/static/datafiles/rv0009_json.txt'
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30293): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 61, in search
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     return redirect(url_for('search_results', query = text))
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     force_external=external)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244]     raise BuildError(endpoint, values, method)
+[Thu Apr 17 15:04:18 2014] [error] [client 10.10.7.244] BuildError: ('search_results', {'query': u'rv0001'}, None)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30292): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 61, in search
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     return redirect(url_for('search_results', query = text))
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     force_external=external)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244]     raise BuildError(endpoint, values, method)
+[Thu Apr 17 15:05:49 2014] [error] [client 10.10.7.244] BuildError: ('search_results', {'query': u'rv0001'}, None)
+[Thu Apr 17 15:12:51 2014] [error] [client 10.10.7.244] Premature end of script headers: mtbwebtools.wsgi, referer: http://mtbwebtools.systemsbiology.net/genelist/mtu_inf_111813.csv
+[Thu Apr 17 15:12:51 2014] [info] mod_wsgi (pid=30592): Attach interpreter ''.
+[Thu Apr 17 15:12:51 2014] [info] mod_wsgi (pid=30592): Adding '/local/htdocs/mtbwebtools' to path.
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30293): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 61, in search
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     return redirect(url_for('.search_results', query = text))
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 312, in url_for
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     return appctx.app.handle_url_build_error(error, endpoint, values)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1641, in handle_url_build_error
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/helpers.py", line 305, in url_for
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     force_external=external)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/werkzeug/routing.py", line 1620, in build
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244]     raise BuildError(endpoint, values, method)
+[Thu Apr 17 15:14:47 2014] [error] [client 10.10.7.244] BuildError: ('search_results', {'query': u'rv0001'}, None)
+[Thu Apr 17 15:16:31 2014] [info] [client 10.10.7.244] mod_wsgi (pid=30592, process='mtbwebtools', application=''): Loading WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244] mod_wsgi (pid=30293): Exception occurred processing WSGI script '/local/htdocs/mtbwebtools/mtbwebtools.wsgi'.
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244] Traceback (most recent call last):
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     return self.wsgi_app(environ, start_response)
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     response = self.make_response(self.handle_exception(e))
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     response = self.full_dispatch_request()
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     rv = self.handle_user_exception(e)
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     reraise(exc_type, exc_value, tb)
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     rv = self.dispatch_request()
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/tools/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]   File "/local/htdocs/mtbwebtools/app/views.py", line 329, in bicluster
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244]     OUT = open(inputfile, 'wb')
+[Thu Apr 17 15:16:41 2014] [error] [client 10.10.7.244] IOError: [Errno 13] Permission denied: u'/local/htdocs/mtbwebtools/app/static/datafiles/bicluster_bc_74.csv'

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+	<title>Upload New File</title>
+    <h1>Upload new File</h1>
+
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file><br>
+         <select>
+  		<option value="RData">RData</option>
+  		<option value="Comma separated">Comma Separated</option>
+
+		</select><br>
+		Experiment name: <input type="text" name="experimentname"><br>
+        <input type=submit value=Upload><br>
+    </form>
+{% endblock %}

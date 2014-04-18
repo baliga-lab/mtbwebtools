@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: steelblue;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #000;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+ 
+.x.axis path { 
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="{{url_for('static', filename='d3/box2.js') }}"></script>
+<script>
+var labels = true; // show the text labels beside individual boxplots?
+
+var margin = {top: 30, right: 50, bottom: 70, left: 50};
+var  width = 500 - margin.left - margin.right;
+var height = 400 - margin.top - margin.bottom;
+var origwidth = width;
+var min = Infinity,
+    max = -Infinity;
+	
+// parse in the data	
+/*
+d3.csv("static/datafiles/boxplotdata3.csv", function(error, csv) {
+	// using an array of arrays with
+	// data[n][2] 
+	// where n = number of columns in the csv file 
+	// data[i][0] = name of the ith column
+	// data[i][1] = array of values of ith column
+
+	var data = [];
+	data[0] = [];
+	data[1] = [];
+	data[2] = [];
+	data[3] = [];
+	// add more rows if your csv file has more columns
+
+	// add here the header of the csv file
+	data[0][0] = "Q1";
+	data[1][0] = "Q2";
+	data[2][0] = "Q3";
+	data[3][0] = "Q4";
+	// add more rows if your csv file has more columns
+
+	data[0][1] = [];
+	data[1][1] = [];
+	data[2][1] = [];
+	data[3][1] = [];
+  
+	csv.forEach(function(x) {
+		var v1 = Math.floor(x.Q1),
+			v2 = Math.floor(x.Q2),
+			v3 = Math.floor(x.Q3),
+			v4 = Math.floor(x.Q4);
+			// add more variables if your csv file has more columns
+			
+		var rowMax = Math.max(v1, Math.max(v2, Math.max(v3,v4)));
+		var rowMin = Math.min(v1, Math.min(v2, Math.min(v3,v4)));
+
+		data[0][1].push(v1);
+		data[1][1].push(v2);
+		data[2][1].push(v3);
+		data[3][1].push(v4);
+		 // add more rows if your csv file has more columns
+		 
+		if (rowMax > max) max = rowMax;
+		if (rowMin < min) min = rowMin;	
+	});
+*/
+var data = [];
+var dataset;
+var datatest = [];
+var cnt = {};
+
+width = 0;
+var json_input = {{jsonobj|safe}};
+//document.write("{{jsonobj}}");
+//debugger;
+
+//d3.json(json_input, function (error, jsondata) {
+//  if (error) return console.warn(error);
+
+
+  var entrs = d3.entries(json_input);
+
+  entrs.forEach(function(d) {
+    d.Cond = d.key;
+
+    var vals = d.value;
+    var a = [];
+
+    for (var i = 0; i < vals.length; i++) {
+    	var r = +vals[i];
+    	a.push(r);
+    	if (r > max) max = r;
+    	if (r < min) min = r;
+    }
+
+    //if (a.length > 2) {
+    //	data[d.Cond] = a;
+	//}
+	data[d.Cond] = a;
+	width+=10;
+  });
+
+  if (width < origwidth) { width = origwidth;}
+
+  var dataarray = [];
+  //var entrs = d3.entries(data);
+  var n = entrs.length;
+
+  //  Initialize the dataarray as an array of arrays
+  for (var i = 0; i < n; i++) {
+  	dataarray[i] = [];
+  }
+
+  //  Fill in the labels and array of values
+  for (var i = 0; i < n; i++) {
+  	dataarray[i][0] = entrs[i].key;
+  	var a = entrs[i].value;
+  	a = a.map(function(v) { return +v; }); // convert from string to number
+  	dataarray[i][1] = a;
+  }
+/*
+  	datatest[0] = [];
+	datatest[1] = [];
+	// add more rows if your csv file has more columns
+
+	// add here the header of the csv file
+	datatest[0][0] = "Q1";
+	datatest[1][0] = "Q2";
+
+	// add more rows if your csv file has more columns
+
+	datatest[0][1] = [];
+	datatest[1][1] = [];
+
+	datatest[0][1].push(8);
+	datatest[0][1].push(5);
+	datatest[0][1].push(10);
+
+	datatest[1][1].push(27);
+	datatest[1][1].push(20);
+	datatest[1][1].push(23);
+*/
+		var chart = d3.box()
+		.whiskers(iqr(1.5))
+		.height(height)	
+		.domain([min, max])
+		.showLabels(labels);
+
+	var svg = d3.select("body").append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.attr("class", "box")    
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	// the x-axis
+	var x = d3.scale.ordinal()	   
+		.domain( dataarray.map(function(d) { console.log(d); return d[0] } ) )    
+		.rangeRoundBands([0 , width], 0.7, 0.3); 	
+
+	var xAxis = d3.svg.axis()
+		.scale(x)
+		.orient("bottom");
+
+	// the y-axis
+	var y = d3.scale.linear()
+		.domain([min, max])
+		.range([height + margin.top, 0 + margin.top]);
+	
+	var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+	// draw the boxplots	
+	svg.selectAll(".box")	   
+      .data(dataarray)
+	  .enter().append("g")
+		.attr("transform", function(d) { return "translate(" +  x(d[0])  + "," + margin.top + ")"; } )
+		.append('svg:title')
+        .text(function(d){return d.Cond})
+      .call(chart.width(x.rangeBand())); 
+	      
+	// add a title
+	svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 + (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "18px") 
+        //.style("text-decoration", "underline")  
+        .text("A");
+ 
+	 // draw y axis
+	svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+		.append("text") // and text1
+		  .attr("transform", "rotate(-90)")
+		  .attr("y", 6)
+		  .attr("dy", ".71em")
+		  .style("text-anchor", "end")
+		  .style("font-size", "16px") 
+		  .text("Log Ratio");		
+	
+	// draw x axis	
+	svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + (height  + margin.top + 10) + ")")
+      .call(xAxis)
+	  .append("text")
+	  	.attr("transform", "rotate(-90)")             // text label for the x axis
+        .attr("x", (width / 2) )
+        .attr("y",  10 )
+		.attr("dy", ".71em")
+        .style("text-anchor", "middle")
+		.style("font-size", "16px");
+        //.text("Quarter"); 
+//});
+
+// Returns a function to compute the interquartile range.
+function iqr(k) {
+  return function(d, i) {
+    var q1 = d.quartiles[0],
+        q3 = d.quartiles[2],
+        iqr = (q3 - q1) * k,
+        i = -1,
+        j = d.length;
+    while (d[++i] < q1 - iqr);
+    while (d[--j] > q3 + iqr);
+    return [i, j];
+  };
+}
+
+</script>
