@@ -204,7 +204,6 @@ def genelist(filename):
 	dbfile = File.query.filter_by(filename=os.path.basename(dbfilename)).first()
 
 	#  File name for annotfile, check if exits, if not make it, then read in the annots
-
 	annotoutfile = os.path.join(app.config['DATA_FOLDER'], 'All_annots_'+dbfile.filename.rsplit('.',1)[0]+'.txt')
 	allannots = []
 	if not os.path.isfile(annotoutfile):
@@ -241,15 +240,17 @@ def genelist(filename):
 				flash('No condition types selected.  Please choose condition(s).')
 				return render_template("genelist.html", annots=allannots)
 
-			condcnt = len(Condition.query.all())
-
+			#  Limit search to first set of conditions results bc we only need the conditions through one gene to grab condition names
+			adbgene = Gene.query.filter_by(descr=genelist[0], file_id=dbfile.id).first()
+			dbconds = adbgene.get_conditions()
+			condcnt = 0
+			for c in dbconds:
+				condcnt+=1
 			condset = set([])
 			for annot in annotlist:
-				#  Limit search to first numgenes results bc we only need the conditions through one gene to grab condition names
 				condresults = Condition.query.whoosh_search(annot.lower(), limit=condcnt).all()
 				for c in condresults:
 					condset.add(c.condition)
-
 			condlist = list(condset)
 
 			if(len(condlist) < 2):
@@ -322,6 +323,7 @@ def getAllAnnots(filename):
 		break # Just needed one gene to get all conditions and annotations
 
 	outfile = os.path.join(app.config['DATA_FOLDER'], 'All_annots_'+dbfile.filename.rsplit('.')[0]+'.txt')
+	OUT = open(outfile, 'wb')
 	for annot in allannots:
 		OUT.write(annot+'\n')
 	OUT.close()
