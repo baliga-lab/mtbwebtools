@@ -30,3 +30,4 @@ scipy
 simplejson
 
 sqlalchemy-migrate==0.8.2
+

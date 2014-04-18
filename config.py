@@ -1,17 +1,8 @@
-import os
-#from flask_openid import COMMON_PROVIDERS
-
-SECRET_KEY = 'you-will-never-guess'
-DEBUG = True
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-
-BASEDIR = os.path.abspath(os.path.dirname(__file__))
-
-ALLOWED_EXTENSIONS = set(['RData', 'csv'])
-DATA_FOLDER = '/local/htdocs/mtbwebtools/app/static/datafiles/'
-
-SQLALCHEMY_DATABASE_URI = 'mysql://root@como/mtbflask'
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-
-WHOOSH_BASE = os.path.join(basedir, 'search.db')
+#A config.py file must be created like: 
+import os SECRET_KEY = 'something-mysterious' 
+DEBUG = True 
+BASEDIR = os.path.abspath(os.path.dirname(file)) 
+DATA_FOLDER = '/app/static/datafiles/' 
+SQLALCHEMY_DATABASE_URI = 'mysql://root@/mtbflask' 
+SQLALCHEMY_MIGRATE_REPO = os.path.join(BASEDIR, 'db_repository') 
+WHOOSH_BASE = os.path.join(BASEDIR, 'search.db')
