@@ -1,5 +1,5 @@
 search.db/
-.pyc
+*.pyc
 requirements_noversion.txt
 mtbflask.py
 db_repository
