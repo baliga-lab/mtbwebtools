@@ -18,3 +18,13 @@ numpy
 scipy
 simplejson
 sqlalchemy-migrate==0.8.2
+
+A config.py file must be created like:\n
+import os\n
+SECRET_KEY = 'something-mysterious'\n
+DEBUG = True\n
+BASEDIR = os.path.abspath(os.path.dirname(__file__))\n
+DATA_FOLDER = '<your base folder>/app/static/datafiles/'\n
+SQLALCHEMY_DATABASE_URI = 'mysql://root@<yourserver>/mtbflask'\n
+SQLALCHEMY_MIGRATE_REPO = os.path.join(BASEDIR, 'db_repository')\n
+WHOOSH_BASE = os.path.join(BASEDIR, 'search.db')\n
