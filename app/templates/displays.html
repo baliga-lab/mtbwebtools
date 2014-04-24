@@ -12,33 +12,8 @@ Please select a bicluster:<br><br>
 </select>
   {% endif %}<br>
   <input type="submit" name="submit" id="button" value="Bicluster Heatmap"/><br><br><br><br>
-<h4>Condition View:</h4>
+  <h4>Condition View:</h4>
 <input type="submit" name="submit" id="button" value="Heatmap"/><br><br><br><br>
-<h4>Gene View:</h4>
-Please select a gene:<br><br>
-{% if geneids %}
-<select name="select1">
-  {% for g in geneids %}
-  <option name="option" value="{{g}}">{{g}}</option><br>
-  {% endfor %}
-</select>
-  {% endif %}
-  <br>
-  <input type="submit" name="submit" id="button" value="Zoomplot"/>
-  <br><br><br><br>
-  Enter a list of genes, one per line, for Line plot:<br><br>
-<textarea name="text" id="textarea" cols="40" rows="20">rv0001
-rv0002
-rv0003
-rv0004
-rv0005
-rv0006
-rv0007
-rv0008c
-rv0009
-rv0010c</textarea><br>
-<br>
-	<input type="submit" name="submit" id="button" value="Lineplot"/>
 <br><br><br><br>
 </form>
 

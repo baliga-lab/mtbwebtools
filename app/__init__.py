@@ -3,21 +3,21 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import os
 import os.path as op
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+
+
 # Initialize app
 app = Flask(__name__)
 app.debug = True
 app.config.from_object('config')
-os.environ['PYTHON_EGG_CACHE'] = '/tmp/tmp2'
+#os.environ['PYTHON_EGG_CACHE'] = '/tmp/tmp2'
 db = SQLAlchemy(app)
-
-#mtb = Blueprint('mtb', __name__, template_folder='templates')
-#app.register_blueprint(mtb)
 
 from app.views import mod as mainModule
 app.register_blueprint(mainModule)
 
 #  For full text search
-#from app import views, models
 import flask.ext.whooshalchemy as whooshalchemy
 from models import File, Gene, Condition
 

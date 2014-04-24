@@ -1,7 +1,8 @@
-from flask import render_template, flash, redirect, session, url_for, request, g, make_response, send_from_directory, Blueprint, abort
+from flask import render_template, flash, redirect, url_for, request, g, make_response, send_from_directory, Blueprint, abort
+from sqlalchemy import or_, and_
 from werkzeug import secure_filename
 from jinja2 import TemplateNotFound
-from app import app, db
+from app import app
 #from functools import wraps
 from .models import File, Gene, Condition
 from .forms import SearchForm
@@ -27,6 +28,8 @@ import csv
 import operator
 
 mod = Blueprint('mod', __name__, template_folder='templates')
+
+from .database import Session
 
 @mod.errorhandler(404)
 def page_not_found(error):
@@ -63,17 +66,18 @@ def search():
 
 @mod.route('/search_results/<query>')
 def search_results(query):
-	condcnt = len(Condition.query.all())
-	dbgeneresults = Gene.query.whoosh_search(query.lower()).all() # All genes stored as lowercase
+	db_session = Session()
+	#condcnt = len(Condition.query.all())
+	dbgeneresults = db_session.query(Gene).filter(Gene.descr == query.lower()).all() #Gene.query.whoosh_search(query.lower()).all() # All genes stored as lowercase
 	generesults = []
 	for g in dbgeneresults:
 		generesults.append(g.descr)
-	dbcondresults = Condition.query.whoosh_search(query.lower(), limit=condcnt).all() # use set to remove duplicate elements
-	condresults = set([])
+	dbcondresults = db_session.query(Condition).filter(or_(Condition.annot1 == query.lower(), Condition.annot2 == query.lower(), Condition.annot3 == query.lower())).all() 
+	condresults = set([]) # use set to remove duplicate elements
 	for c in dbcondresults:
 		condresults.add(c.condition)
 	#condresults = list(condresults)
-	expresults = File.query.whoosh_search(query).all()
+	expresults = db_session.query(File).filter(File.filename == query).all() #File.query.whoosh_search(query).all()
 	return render_template('search_results.html',
         query = query,
         generesults = generesults,
@@ -91,11 +95,12 @@ def displays(filename):
         genelist.append(dbg.descr)
     biclusters = []
     for fname in os.listdir(os.path.join(app.config['DATA_FOLDER'],'biclusters')):
-    	biclusters.append(int(os.path.basename(fname).rsplit('.')[0].replace('bc_','')))
+    	biclusters.append(os.path.basename(fname).rsplit('.')[0].replace('bc_','')) # Get just the number
     biclusters.sort()
     biclustersstr = []
+    filename_trunc = filename.split('_')[2].rsplit('.')[0] # WARNING: specific for mtu_inf results and bicluster path, see bicluster fxn below (i.e. may not work for all experiment names)
     for bc in biclusters:
-    	s = 'bc_'+str(bc)
+    	s = 'bicluster_'+makeBiclusterStr(bc) # Create the bicluster string for the drop-down menu (word 'bicluster' with leading zeros, e.g. bicluster_0001)
     	biclustersstr.append(s)
     if request.method == 'POST':
         if request.form['submit'] == 'Zoomplot':
@@ -108,7 +113,7 @@ def displays(filename):
         if request.form['submit'] == 'Heatmap':
             return redirect(url_for('.genelist', filename=filename))
         if request.form['submit'] == 'Bicluster Heatmap':
-        	return redirect(url_for('.bicluster', filename=filename, bicluster=request.form['selectbc']))
+        	return redirect(url_for('.bicluster', filename_trunc=filename_trunc, bicluster=request.form['selectbc']))
     return render_template('displays.html', filename=filename, geneids=genelist, biclusters=biclustersstr)
 
 def toCSstring(sometext):
@@ -117,6 +122,15 @@ def toCSstring(sometext):
 	alist = sometext.split('\r\n')
 	commastr = ",".join(alist)
 	return commastr
+
+def makeBiclusterStr(bc_num):
+	wantlen = 4
+	i = len(bc_num)
+	bcstr = bc_num
+	while i < wantlen:
+		bcstr = "0"+bcstr
+		i+=1
+	return bcstr
 
 #  ZOOMPLOT # -> for one gene across all conditions (non-NA)
 
@@ -200,8 +214,15 @@ def heatmap(inputdata, inputlabels): #, pngrows, pngcols):
 def genelist(filename):
 	#  Get user name from openid/email
 	#uname = g.user.email.split('@')[0]
-	dbfilename = os.path.join(app.config['DATA_FOLDER'], (filename.rsplit('.', 1)[0]+'.csv'))
-	dbfile = File.query.filter_by(filename=os.path.basename(dbfilename)).first()
+	#dbfilename = os.path.join(app.config['DATA_FOLDER'], (filename.rsplit('.', 1)[0]+'.csv'))
+	#dbfile = File.query.filter_by(filename=os.path.basename(dbfilename)).first()
+	db_session = Session()
+	dbfile = db_session.query(File).filter_by(filename=filename).first()
+
+
+	if dbfile is None:
+		flash('can not find dbfile '+filename)
+		return redirect(url_for('.profile'))
 
 	#  File name for annotfile, check if exits, if not make it, then read in the annots
 	annotoutfile = os.path.join(app.config['DATA_FOLDER'], 'All_annots_'+dbfile.filename.rsplit('.',1)[0]+'.txt')
@@ -241,17 +262,21 @@ def genelist(filename):
 				return render_template("genelist.html", annots=allannots)
 
 			#  Limit search to first set of conditions results bc we only need the conditions through one gene to grab condition names
-			adbgene = Gene.query.filter_by(descr=genelist[0], file_id=dbfile.id).first()
+			adbgene = db_session.query(Gene).filter_by(descr=genelist[0], file_id=dbfile.id).first()
 			dbconds = adbgene.get_conditions()
 			condcnt = 0
 			for c in dbconds:
 				condcnt+=1
 			condset = set([])
 			for annot in annotlist:
-				condresults = Condition.query.whoosh_search(annot.lower(), limit=condcnt).all()
+				#condresults = Condition.query.whoosh_search(annot.lower(), limit=condcnt).all()
+				condresults = db_session.query(Condition).filter(or_(Condition.annot1 == annot.lower(), Condition.annot2 == annot.lower(), Condition.annot3 == annot.lower())).all()
 				for c in condresults:
 					condset.add(c.condition)
 			condlist = list(condset)
+
+			#flash('condlist = ' + '\t'.join(condlist))
+			#return render_template("genelist.html", annots=allannots)
 
 			if(len(condlist) < 2):
 				flash('Not enough conditions associated with '+annotlist[0])
@@ -275,16 +300,18 @@ def genelist(filename):
 				OUT.write(header+'\n')
 				newgenelist = []
 				for gene in genelist:
-					dbgene = Gene.query.filter_by(descr=gene).filter_by(file_id=dbfile.id).first()
+					dbgene = db_session.query(Gene).filter(and_(Gene.descr==gene, Gene.file_id==dbfile.id)).first()
 					if dbgene is None:
 						continue
 					else:
 						newgenelist.append(gene)
 					OUT.write(gene)
-					#conds = dbgene.get_conditions()
-					for c in condlist:
-						dbcond = Condition.query.filter_by(condition=c,gene_id=dbgene.id).first()
+					dbconds = dbgene.get_conditions()
+					for cond in condlist:
+						dbcond = db_session.query(Condition).filter(and_(Condition.condition==cond,Condition.gene_id==dbgene.id)).first()
 						OUT.write(','+dbcond.get_value())
+					#for dbcond in dbconds:
+					#	OUT.write(','+dbcond.get_value())
 					OUT.write('\n')
 				OUT.close()
 
@@ -310,9 +337,10 @@ def genelist(filename):
 	return render_template("genelist.html", annots=allannots)
 
 def getAllAnnots(filename):
+	db_session = Session()
 	allannots = set([])
-	dbfile = File.query.filter_by(filename=filename).first()
-	dbgenes = Gene.query.all()
+	dbfile = db_session.query(File).filter_by(filename=filename).first()
+	dbgenes = db_session.query(Gene).all()
 	for gene in dbgenes:
 		conditions = gene.get_conditions()
 		for cond in conditions:
@@ -329,13 +357,22 @@ def getAllAnnots(filename):
 	OUT.close()
 	#return allannots
 
-@mod.route('/bicluster/<filename>/<bicluster>')
-def bicluster(filename,bicluster):
+@mod.route('/bicluster/<filename_trunc>/<bicluster>')
+def bicluster(filename_trunc,bicluster):
 
-	dbfile = File.query.filter_by(filename=filename).first()
+	db_session = Session()
+
+	#  Look for truncated file name in the files in DB and then look up this filename in DB
+	dbfiles = File.query.all()
+	filename = ''
+	for f in dbfiles:
+		if filename_trunc in f.filename:
+			filename = f.filename
+	dbfile = db_session.query(File).filter_by(filename=filename).first()
 	
 	#  Get the selected bicluster option and make filename for reading json
-	bcfname = os.path.join(app.config['DATA_FOLDER'],'biclusters', bicluster+'.json')
+	bc = bicluster.replace('bicluster_','').lstrip('0') # Get just the number
+	bcfname = os.path.join(app.config['DATA_FOLDER'],'biclusters', 'bc_'+bc+'.json')
 	jsondata = codecs.open(bcfname, 'rU','utf-8')
 	data = json.load(jsondata)
 	genelist = data['genes']
@@ -348,7 +385,7 @@ def bicluster(filename,bicluster):
 		flash('Not enough genes for heatmap')
 		return redirect(url_for('.displays', filename=filename))
 
-	inputfile = os.path.join(app.config['DATA_FOLDER'], ('bicluster_'+bicluster+'.csv'))
+	inputfile = os.path.join(app.config['DATA_FOLDER'], ('bc_'+bc+'.csv'))
 
 	if not os.path.isfile(inputfile):
 
@@ -362,14 +399,14 @@ def bicluster(filename,bicluster):
 		OUT.write(header+'\n')
 		newgenelist = []
 		for gene in genelist:
-			dbgene = Gene.query.filter_by(descr=gene.lower()).filter_by(file_id=dbfile.id).first()
+			dbgene = db_session.query(Gene).filter_by(descr=gene.lower()).filter_by(file_id=dbfile.id).first()
 			if dbgene is None:
 				continue
 			else:
 				newgenelist.append(gene)
 			OUT.write(gene)
 			for c in condlist:
-				dbcond = Condition.query.filter_by(condition=c,gene_id=dbgene.id).first()
+				dbcond = db_session.query(Condition).filter_by(condition=c,gene_id=dbgene.id).first()
 				if dbcond is None:
 					OUT.write(',NA')
 				else:
@@ -385,12 +422,12 @@ def bicluster(filename,bicluster):
 		flash('No data for this bicluster.')
 		return redirect(url_for('.displays', filename=filename))
 
-	outputfiledata = os.path.join(app.config['DATA_FOLDER'], ('heatmapdata_'+bicluster+'.csv'))
-	outputfilelab = os.path.join(app.config['DATA_FOLDER'], ('heatmaplab_'+bicluster+'.js'))
+	outputfiledata = os.path.join(app.config['DATA_FOLDER'], ('heatmapdata_'+bc+'.csv'))
+	outputfilelab = os.path.join(app.config['DATA_FOLDER'], ('heatmaplab_'+bc+'.js'))
 
 	if not os.path.isfile(outputfiledata) or not os.path.isfile(outputfilelab):
 		heatmapobj = Heatmap()
-		heatmapobj.makeHeatmap(inputfile,outputfiledata,outputfilelab,app.config['DATA_FOLDER'],bicluster)
+		heatmapobj.makeHeatmap(inputfile,outputfiledata,outputfilelab,app.config['DATA_FOLDER'],bc)
 
 	return redirect(url_for('.heatmap', inputdata=os.path.basename(outputfiledata), inputlabels=os.path.basename(outputfilelab)))
 
