@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <script type="text/javascript">
 
   //  Import label information from the js file and append to document
@@ -178,14 +179,14 @@ Order:
 
 <script type="text/javascript">
 
-var margin = { top: 75, right: 10, bottom: 50, left: 400 },
+var margin = { top: 75, right: 10, bottom: 50, left: 450 },
   cellSize=12;
   col_number=colLabel.length;
   row_number=rowLabel.length;
   width = cellSize*col_number, // - margin.left - margin.right,
   height = cellSize*row_number , // - margin.top - margin.bottom,
   //gridSize = Math.floor(width / 24),
-  legendElementWidth = cellSize*2.5,
+  legendElementWidth = cellSize*1,
   colorBuckets = 21,
   //colors = ['#005824','#1A693B','#347B53','#4F8D6B','#699F83','#83B09B','#9EC2B3','#B8D4CB','#D2E6E3','#EDF8FB','#FFFFFF','#F1EEF6','#E6D3E1','#DBB9CD','#D19EB9','#C684A4','#BB6990','#B14F7C','#A63467','#9B1A53','#91003F'];
 // Colors blue to yellow
@@ -237,6 +238,8 @@ colors = [
 "#E1F238",
 "#ECFF2E"]
 
+
+//colors = ["#220DFD", "#878695", "#ECFF2E"]
 // Change width if less than bar legend width
 if(width < 800) {width = 800;}
 
@@ -344,6 +347,7 @@ function(error, data) {
 
   var legend = svg.selectAll(".legend")
       .data([-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10])
+      //.data([-10,0,10])
       .enter().append("g")
       .attr("class", "legend");
  
@@ -356,7 +360,7 @@ function(error, data) {
  
   legend.append("text")
     .attr("class", "mono")
-    .text(function(d) { return d; })
+    .text(function(d) { if (d == -10 || d == 10 || d == 0) { return d;} })
     .attr("width", legendElementWidth)
     .attr("x", function(d, i) { return legendElementWidth * i; })
     .attr("y", height + (cellSize*4));
