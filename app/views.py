@@ -84,37 +84,44 @@ def search_results(query):
         condresults = condresults,
         expresults = expresults)
 
+	db_session.close()
+
 ###  VISUALIZATIONS  ###
 
 @mod.route('/displays/<filename>', methods=['POST','GET'])
 def displays(filename):
-    dbfile = File.query.filter_by(filename=filename).first()
-    dbgenes = dbfile.get_genes()
-    genelist = []
-    for dbg in dbgenes:
-        genelist.append(dbg.descr)
-    biclusters = []
-    for fname in os.listdir(os.path.join(app.config['DATA_FOLDER'],'biclusters')):
-    	biclusters.append(os.path.basename(fname).rsplit('.')[0].replace('bc_','')) # Get just the number
-    biclusters.sort()
-    biclustersstr = []
-    filename_trunc = filename.split('_')[2].rsplit('.')[0] # WARNING: specific for mtu_inf results and bicluster path, see bicluster fxn below (i.e. may not work for all experiment names)
-    for bc in biclusters:
-    	s = 'bicluster_'+makeBiclusterStr(bc) # Create the bicluster string for the drop-down menu (word 'bicluster' with leading zeros, e.g. bicluster_0001)
-    	biclustersstr.append(s)
-    if request.method == 'POST':
-        if request.form['submit'] == 'Zoomplot':
-            return redirect(url_for('.zoomplot', fileid=dbfile.id, genedescr=request.form['select1']))
-            #return redirect(url_for('.index'))
-        if request.form['submit'] == 'Lineplot':
-            text = request.form['text']
-            textstr = toCSstring(text)
-            return redirect(url_for('.d3lineplot',filename=filename, textstr=textstr))
-        if request.form['submit'] == 'Heatmap':
-            return redirect(url_for('.genelist', filename=filename))
-        if request.form['submit'] == 'Bicluster Heatmap':
-        	return redirect(url_for('.bicluster', filename_trunc=filename_trunc, bicluster=request.form['selectbc']))
-    return render_template('displays.html', filename=filename, geneids=genelist, biclusters=biclustersstr)
+
+	db_session = Session()
+
+	dbfile = db_session.query(File).filter_by(filename=filename).first()
+	dbgenes = dbfile.get_genes()
+	genelist = []
+	for dbg in dbgenes:
+		genelist.append(dbg.descr)
+	biclusters = []
+	for fname in os.listdir(os.path.join(app.config['DATA_FOLDER'],'biclusters')):
+		biclusters.append(os.path.basename(fname).rsplit('.')[0].replace('bc_','')) # Get just the number
+	biclusters.sort()
+	biclustersstr = []
+	filename_trunc = filename.split('_')[2].rsplit('.')[0] # WARNING: specific for mtu_inf results and bicluster path, see bicluster fxn below (i.e. may not work for all experiment names)
+	for bc in biclusters:
+		s = 'bicluster_'+makeBiclusterStr(bc) # Create the bicluster string for the drop-down menu (word 'bicluster' with leading zeros, e.g. bicluster_0001)
+		biclustersstr.append(s)
+
+	db_session.close()
+
+	if request.method == 'POST':
+		if request.form['submit'] == 'Zoomplot':
+			return redirect(url_for('.zoomplot', fileid=dbfile.id, genedescr=request.form['select1']))
+		if request.form['submit'] == 'Lineplot':
+			text = request.form['text']
+			textstr = toCSstring(text)
+			return redirect(url_for('.d3lineplot',filename=filename, textstr=textstr))
+		if request.form['submit'] == 'Heatmap':
+			return redirect(url_for('.genelist', filename=filename))
+		if request.form['submit'] == 'Bicluster Heatmap':
+			return redirect(url_for('.bicluster', filename_trunc=filename_trunc, bicluster=request.form['selectbc']))
+	return render_template('displays.html', filename=filename, geneids=genelist, biclusters=biclustersstr) 
 
 def toCSstring(sometext):
 	sometext.rstrip()
@@ -144,7 +151,9 @@ def zoomplot(fileid, genedescr):
 #  Create JSON representation of data for a gene (used by zoomplot)
 ###
 def makeJSONdataZoomplot(fileid, genedescr):
-	gene = Gene.query.filter_by(descr=genedescr,file_id=fileid).first()
+
+	db_session = Session()
+	gene = db_session.query(Gene).filter_by(descr=genedescr,file_id=fileid).first()
 	outputfilenm = gene.descr+'_json.txt'
 	fulloutput = os.path.join(app.config['DATA_FOLDER'], outputfilenm)
 	if os.path.isfile(fulloutput): #  Does file already exist?  if so do not need to make it again
@@ -152,18 +161,22 @@ def makeJSONdataZoomplot(fileid, genedescr):
 	conditions = gene.get_conditions()
 	cond2vals = {}
 	for cond in conditions:
-		dbcond = Condition.query.filter_by(condition=cond).filter_by(gene_id=gene.get_id()).first() # all replicates
+		dbcond = db_session.query(Condition).filter_by(condition=cond).filter_by(gene_id=gene.get_id()).first() # all replicates
 		condstr = dbcond.get_condition()
 		val = dbcond.get_value()
 		if val =='NA':
 			continue
 		cond2vals[condstr] = val
 
+		db_session.close()
+
 		with open(fulloutput, 'w') as f:
 			f.write(unicode(json.dumps(cond2vals, ensure_ascii=False, indent=4, separators=(',', ': '))))
 		f.close()
 		#jsonobj = json.dumps(cond2vals, ensure_ascii=True)
 		return outputfilenm
+
+		
 
 	#return jsonobj
 
@@ -173,9 +186,11 @@ def makeJSONdataZoomplot(fileid, genedescr):
 @mod.route('/d3lineplot/<filename>/<textstr>')
 def d3lineplot(filename, textstr):
     #genelist = parseText(text)
+
+    db_session = Session()
     genelist = textstr.split(',')
     fstr = textstr.rstrip().replace(',','_')
-    dbfile = File.query.filter_by(filename=filename).first()
+    dbfile = db_session.query(File).filter_by(filename=filename).first()
     genedescrs = [x for x in genelist]
     jsonstr = '{'
     jsonstr = jsonstr+'\n\"labels\": '+json.dumps(genedescrs) + ','
@@ -183,7 +198,7 @@ def d3lineplot(filename, textstr):
     ntimes = 0
     for g in genelist:
     	vals = [] # ea gene is going to have an array of values cooresponding to the conditions
-    	dbgene = Gene.query.filter_by(descr=g, file_id=dbfile.id).first()
+    	dbgene = db_session.query(Gene).filter_by(descr=g, file_id=dbfile.id).first()
     	conds = dbgene.get_conditions()
     	for c in conds:
     		val = c.get_value()
@@ -196,14 +211,19 @@ def d3lineplot(filename, textstr):
     outfile = os.path.join(app.config['DATA_FOLDER'], 'json4lineplot_'+fstr+'.json')
     OUT = open(outfile, 'wb')
     OUT.write(jsonstr)
+    db_session.close()
     return render_template('d3lineplot.html', jsonfile=os.path.basename(outfile))
+
+    
 
 
 #  HEATMAP FXNS  #
 
 @mod.route('/heatmapinput/<filename>', methods=['GET','POST'])
 def heatmapinput(filename):
-	dbfile = File.query.filter_by(filename=filename).first()
+	db_session = Session()
+	dbfile = db_session.query(File).filter_by(filename=filename).first()
+	db_session.close()
 
 
 @mod.route('/heatmap/<inputdata>/<inputlabels>') #'/<pngrows>/<pngcols>')
@@ -221,6 +241,7 @@ def genelist(filename):
 
 
 	if dbfile is None:
+		db_session.close()
 		flash('can not find dbfile '+filename)
 		return redirect(url_for('.profile'))
 
@@ -242,12 +263,14 @@ def genelist(filename):
 			heatmapobj = Heatmap()
 			text = request.form['text']
 			if not text:
+				db_session.close()
 				flash('No genes listed.  Please enter a list of gene names.')
 				return render_template("genelist.html", annots=allannots)
 
 			genelist = parseText(text)
 
 			if len(genelist) == 0:
+				db_session.close()
 				flash('No genes listed.  Please enter a list of gene names.')
 				return render_template("genelist.html", annots=allannots)
 
@@ -258,6 +281,7 @@ def genelist(filename):
 					annotlist.append(annot)
 
 			if len(annotlist) == 0:
+				db_session.close()
 				flash('No condition types selected.  Please choose condition(s).')
 				return render_template("genelist.html", annots=allannots)
 
@@ -279,6 +303,7 @@ def genelist(filename):
 			#return render_template("genelist.html", annots=allannots)
 
 			if(len(condlist) < 2):
+				db_session.close()
 				flash('Not enough conditions associated with '+annotlist[0])
 				return render_template("genelist.html", annots=allannots)
 
@@ -314,6 +339,8 @@ def genelist(filename):
 					#	OUT.write(','+dbcond.get_value())
 					OUT.write('\n')
 				OUT.close()
+
+			db_session.close()
 
 			with open(inputfile, 'rb') as f:
 				lines = f.readlines()
@@ -363,7 +390,7 @@ def bicluster(filename_trunc,bicluster):
 	db_session = Session()
 
 	#  Look for truncated file name in the files in DB and then look up this filename in DB
-	dbfiles = File.query.all()
+	dbfiles = db_session.query(File).all()
 	filename = ''
 	for f in dbfiles:
 		if filename_trunc in f.filename:
@@ -379,9 +406,11 @@ def bicluster(filename_trunc,bicluster):
 	condlist = data['conditions']
 
 	if(len(condlist) < 2):
+		db_session.close()
 		flash('Not enough conditions')
 		return redirect(url_for('.displays', filename=filename))
 	if(len(genelist) < 2):
+		db_session.close()
 		flash('Not enough genes for heatmap')
 		return redirect(url_for('.displays', filename=filename))
 
@@ -413,6 +442,8 @@ def bicluster(filename_trunc,bicluster):
 					OUT.write(','+dbcond.get_value())
 			OUT.write('\n')
 		OUT.close()
+
+	db_session.close()
 
 	with open(inputfile, 'rb') as f:
 		lines = f.readlines()
