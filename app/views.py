@@ -46,10 +46,12 @@ def index():
 
 @mod.route('/profile')
 def profile():
-	dbfiles = File.query.all()
+	db_session = Session()
+	dbfiles = db_session.query(File).all()
 	files=[]
 	for f in dbfiles:
 		files.append(f.filename)
+	db_session.close()
 	try:
 		return render_template('profile.html', files=files)
 	except TemplateNotFound:
