@@ -1,11 +1,10 @@
 from database import Base
 #from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Table, Column, Integer, ForeignKey, Boolean, String
+from sqlalchemy import Column, Integer, ForeignKey, Boolean, String
 from sqlalchemy.orm import relationship, backref
 
 #  File refers to an Rdata file
 class File(Base):
-#class File(Base):
     __tablename__ = 'files'
     __searchable__ = ['expname']
 
@@ -15,16 +14,14 @@ class File(Base):
     filedescr = Column(String(100), unique=False)
     expname = Column(String(500), unique=False)
     loaded = Column(Boolean, unique=False)
-    #user_id = Column(Integer(), ForeignKey('user.id'))
 
     genes = relationship('Gene', backref='files', lazy='dynamic', uselist=True)
 
-    def __init__(self, filename=None, location=None, filedescr=None, expname=None, user_id=None, loaded=False):
+    def __init__(self, filename=None, location=None, filedescr=None, expname=None, loaded=False):
         self.filename = filename
         self.location = location
         self.filedescr = filedescr
         self.expname = expname
-        #self.user_id = user_id
         self.loaded = loaded
 
     def get_loc(self):
@@ -51,7 +48,6 @@ class File(Base):
 #  Model for ratios data from Rdata Mtu file - Gene and Linked conditions
 
 class Gene(Base):
-#class Gene(Base):
     __tablename__ = 'genes'
     __searchable__ = ['descr'] # lowercase gene name for searching purposes
 
@@ -79,7 +75,6 @@ class Gene(Base):
         return unicode(self.id)
 
 class Condition(Base):
-#class Condition(Base):
     __tablename__ = 'conditions'
 
     __searchable__ = ['condition','annot1','annot2','annot3']
