@@ -11,8 +11,8 @@ from app import app
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI, convert_unicode=True)
 Session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         transactional=False,
+                                         autoflush=True,
+                                         #transactional=False,
                                          bind=engine))
 
 Base = declarative_base()
