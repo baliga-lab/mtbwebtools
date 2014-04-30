@@ -12,12 +12,13 @@ from app import app
 engine = create_engine(SQLALCHEMY_DATABASE_URI, convert_unicode=True)
 Session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
+                                         transactional=False,
                                          bind=engine))
 
 Base = declarative_base()
 Base.query = Session.query_property()
 
-db_session = Session()
+#db_session = Session()
 
 def init_db():
     # import all modules here that might define models so that
