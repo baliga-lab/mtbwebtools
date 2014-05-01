@@ -31,9 +31,27 @@ mod = Blueprint('mod', __name__, template_folder='templates')
 
 from .database import Session
 
+def error_handler(error):
+    msg = "Request resulted in {}".format(error)
+    current_app.logger.warning(msg, exc_info=error)
+
+    if isinstance(error, HTTPException):
+        description = error.get_description(request.environ)
+        code = error.code
+        name = error.name
+    else:
+        description = ("We encountered an error "
+                       "while trying to fulfill your request")
+        code = 500
+        name = 'Internal Server Error'
+
 @mod.errorhandler(404)
 def page_not_found(error):
     return 'This page does not exist', 404
+
+@mod.errorhandler(505)
+def internal_server_error(e):
+    return render_template('505.html'), 505
 
 @mod.route('/')
 @mod.route('/index')
@@ -51,11 +69,11 @@ def profile():
 	files=[]
 	for f in dbfiles:
 		files.append(f.filename)
-	db_session.close()
-	try:
-		return render_template('profile.html', files=files)
-	except TemplateNotFound:
-		abort(404)
+	db_session.rollback()
+	#try:
+	return render_template('profile.html', files=files)
+	#except HTTPException:
+	#	return redirect(url_for('.internal_server_error', e=HTTPException))
 
 ###  FULL TEXT SEARCHING  ###
 
@@ -69,7 +87,6 @@ def search():
 @mod.route('/search_results/<query>')
 def search_results(query):
 	db_session = Session()
-	#condcnt = len(Condition.query.all())
 	dbgeneresults = db_session.query(Gene).filter(Gene.descr == query.lower()).all() #Gene.query.whoosh_search(query.lower()).all() # All genes stored as lowercase
 	generesults = []
 	for g in dbgeneresults:
@@ -78,7 +95,6 @@ def search_results(query):
 	condresults = set([]) # use set to remove duplicate elements
 	for c in dbcondresults:
 		condresults.add(c.condition)
-	#condresults = list(condresults)
 	expresults = db_session.query(File).filter(File.filename == query).all() #File.query.whoosh_search(query).all()
 	return render_template('search_results.html',
         query = query,
@@ -86,7 +102,7 @@ def search_results(query):
         condresults = condresults,
         expresults = expresults)
 
-	db_session.close()
+	db_session.rollback()
 
 ###  VISUALIZATIONS  ###
 
@@ -110,7 +126,7 @@ def displays(filename):
 		s = 'bicluster_'+makeBiclusterStr(bc) # Create the bicluster string for the drop-down menu (word 'bicluster' with leading zeros, e.g. bicluster_0001)
 		biclustersstr.append(s)
 
-	db_session.close()
+	db_session.rollback()
 
 	if request.method == 'POST':
 		if request.form['submit'] == 'Zoomplot':
@@ -170,7 +186,7 @@ def makeJSONdataZoomplot(fileid, genedescr):
 			continue
 		cond2vals[condstr] = val
 
-		db_session.close()
+		db_session.rollback()
 
 		with open(fulloutput, 'w') as f:
 			f.write(unicode(json.dumps(cond2vals, ensure_ascii=False, indent=4, separators=(',', ': '))))
@@ -213,7 +229,7 @@ def d3lineplot(filename, textstr):
     outfile = os.path.join(app.config['DATA_FOLDER'], 'json4lineplot_'+fstr+'.json')
     OUT = open(outfile, 'wb')
     OUT.write(jsonstr)
-    db_session.close()
+    db_session.rollback()
     return render_template('d3lineplot.html', jsonfile=os.path.basename(outfile))
 
     
@@ -225,7 +241,7 @@ def d3lineplot(filename, textstr):
 def heatmapinput(filename):
 	db_session = Session()
 	dbfile = db_session.query(File).filter_by(filename=filename).first()
-	db_session.close()
+	db_session.rollback()
 
 
 @mod.route('/heatmap/<inputdata>/<inputlabels>') #'/<pngrows>/<pngcols>')
@@ -342,7 +358,7 @@ def genelist(filename):
 					OUT.write('\n')
 				OUT.close()
 
-			db_session.close()
+			db_session.rollback()
 
 			with open(inputfile, 'rb') as f:
 				lines = f.readlines()
@@ -378,6 +394,8 @@ def getAllAnnots(filename):
 				if annot != 'na' and annot != '':
 					allannots.add(annot)
 		break # Just needed one gene to get all conditions and annotations
+
+	db_session.rollback()
 
 	outfile = os.path.join(app.config['DATA_FOLDER'], 'All_annots_'+dbfile.filename.rsplit('.')[0]+'.txt')
 	OUT = open(outfile, 'wb')
@@ -445,7 +463,7 @@ def bicluster(filename_trunc,bicluster):
 			OUT.write('\n')
 		OUT.close()
 
-	db_session.close()
+	db_session.rollback()
 
 	with open(inputfile, 'rb') as f:
 		lines = f.readlines()

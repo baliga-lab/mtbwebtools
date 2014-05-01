@@ -10,8 +10,14 @@ app.config.from_object('config')
 #os.environ['PYTHON_EGG_CACHE'] = '/tmp/tmp2'
 #db = SQLAlchemy(app)
 
+from werkzeug.exceptions import default_exceptions, HTTPException
+from app.views import error_handler
+for exception in default_exceptions:
+	app.register_error_handler(exception, error_handler)
+
 from app.views import mod as mainModule
 app.register_blueprint(mainModule)
+
 
 #  For full text search
 #import flask.ext.whooshalchemy as whooshalchemy
